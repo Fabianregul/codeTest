@@ -7,45 +7,62 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- encabezado -->
-    <header>
-        <nav>
-            <div class="titulo">
-                <h1>CALCULADORA APP</h1>
-            </div>
-            <div class="enlaces">
-                <a href="#">promedio</a>
-                <a href="#">imc</a>
-            </div>
-        </nav>
-    </header>
+   
     <!-- calculadora y elementos -->
     <main>
         <div class="contenidos">
             <div class="cajas">
-                <h2>CALCULADORA PARA SUMAR</h1>
-                <input type="text" id="num_uno" placeholder="ingrese numero 1: ">
-                <input type="text" id="num_dos" placeholder="ingrese numero 2: ">
-                <button onclick="suma()">CALCULAR</button>
+                <img src="./img/icono.png" alt="">
+                <h2>CALCULADORA</h1>
+                <input type="text" id="num_uno" placeholder="ingrese numero 1: " required>
+                <input type="text" id="num_dos" placeholder="ingrese numero 2: " required>
+                <!-- Opciones de operación -->
+                <div class="check">
+                    <label>
+                        <input type="checkbox" id="suma" name="operacion" value="suma">
+                        Suma
+                    </label>
+                    <label>
+                        <input type="checkbox" id="resta" name="operacion" value="resta">
+                        Resta
+                    </label>
+                    <label>
+                        <input type="checkbox" id="multiplicacion" name="operacion" value="multiplicacion">
+                        Multiplicación
+                    </label>
+                    <label>
+                        <input type="checkbox" id="division" name="operacion" value="division">
+                        División
+                    </label>
+                </div>
+                <div class="botones">
+                    <button onclick="suma()">CALCULAR</button>
+                    <button>VER TABLA</button>
+                </div>
                 <p id="resultado"></p>
             </div>
         </div>
     </main>
-    <!-- tabla -->
-    <div class="tabla_estilos">
-        <table id="tablaResultados">
-            <thead>
-                <tr>
-                    <th>Número 1</th>
-                    <th>Número 2</th>
-                    <th>Resultado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Los resultados se agregarán aquí -->
-            </tbody>
-        </table>
+    <!-- Estructura de la ventana modal -->
+    <div id="modalTabla" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Resultados de la Suma</h2>
+            <table id="tablaResultados">
+                <thead>
+                    <tr>
+                        <th>Número 1</th>
+                        <th>Número 2</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los resultados se agregarán aquí -->
+                </tbody>
+            </table>
+        </div>
     </div>
+
 
     <script src="script.js"></script>
 </body>
